@@ -7,5 +7,6 @@ RESTful service
 Technologies
 * Spring Boot
 * Spring Security
-* JWT tokens
+* JWT
+* PostgreSQL
 * Flyway
