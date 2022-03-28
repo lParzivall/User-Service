@@ -8,43 +8,37 @@ drop sequence if exists role_sequence;
 
 create table app_user
 (
-    id       int8 not null,
+    id       bigserial,
     email    varchar(255),
     name     varchar(255),
     password varchar(255),
     primary key (id)
 );
-create sequence appuser_sequence start 1 increment 1;
-
-
+create sequence appuser_sequence start with 1 increment by 1;
 
 
 create table app_user_role
 (
-    id   int8 not null,
+    id   bigserial,
     name varchar(255),
     primary key (id)
 );
-create sequence role_sequence start 1 increment 1;
-
+create sequence role_sequence start with 1 increment by 1;
 
 
 create table app_user_roles
 (
-    app_user_id int8 not null,
-    roles_id    int8 not null
+    app_user_id bigserial not null,
+    roles_id    bigserial not null
 );
 
+
 alter table app_user_roles
-    add constraint FKphgqfhso6hu17lt8ax3yh55eh
+    add constraint FK_roles_role
         foreign key (roles_id)
             references app_user_role;
 
 alter table app_user_roles
-    add constraint FKkwxexnudtp5gmt82j0qtytnoe
+    add constraint FK_roles_user
         foreign key (app_user_id)
             references app_user;
-
-
-
-
