@@ -1,0 +1,15 @@
+syntax = "proto3";
+package ru.mitrasoft.grpc;
+
+message UserServiceRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message UserServiceResponse {
+  repeated string users = 1;
+}
+
+service UserService {
+  rpc getUsers(UserServiceRequest) returns (UserServiceResponse);
+}
