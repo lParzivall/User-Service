@@ -9,9 +9,9 @@ message UserServiceRequest {
 }
 
 message UserServiceResponse {
-  repeated string users = 1;
+  string user = 1;
 }
 
 service UserService {
-  rpc getUsers(UserServiceRequest) returns (UserServiceResponse);
+  rpc getUsers(UserServiceRequest) returns (stream UserServiceResponse);
 }
