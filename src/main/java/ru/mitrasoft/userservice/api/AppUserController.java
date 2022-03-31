@@ -41,7 +41,7 @@ public class AppUserController {
     }
 
     @PutMapping( "/users/{userId}")
-    public void updateStudent(
+    public void updateAppUser(
             @PathVariable("userId") Long appUserId,
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String email) {

@@ -30,11 +30,11 @@ public class AppUserServiceImpl implements AppUserService, UserDetailsService {
 
     @Override
     public AppUser saveAppUser(AppUser appUser) {
-        Optional<AppUser> appUserOptional = appUserRepository
-                .findByEmail(appUser.getEmail());
-        if (appUserOptional.isPresent()) {
+        Boolean existsEmail = appUserRepository
+                .selectExistsEmail(appUser.getEmail());
+        if (existsEmail) {
             log.info("email {} already taken", appUser.getEmail());
-            throw new IllegalStateException("email already taken");
+            throw new IllegalStateException("email " + appUser.getEmail() + "already taken");
         }
         boolean isValidEmail = emailValidator.test(appUser.getEmail());
         if (!isValidEmail) {

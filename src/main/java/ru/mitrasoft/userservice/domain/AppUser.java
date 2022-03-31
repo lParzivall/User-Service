@@ -30,4 +30,10 @@ public class AppUser {
     @ManyToMany(fetch = FetchType.EAGER)
     private Collection<AppUserRole> roles = new ArrayList<>();
 
+    public AppUser(String name, String email, String password, Collection<AppUserRole> roles) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
 }
