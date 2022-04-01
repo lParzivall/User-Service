@@ -13,6 +13,8 @@ Technologies
 
 Требования
 * База данных userservice. username=postgres, password=psql, port=5432
+* При первом запуске приложения, нужно сгенерировать классы для Grpc, выполнив maven package.После нужно проверить сгенерированные исходные файлы в указонной директории. Если Idea не пометила их соответственно, нужно сделать это вручную. Mark Directory as -> Generated Sources Root
+![](src/main/resources/images/package.png) 
 
 Описание
 * Сервис управления пользователями работатет на 8080 порту
