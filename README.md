@@ -10,3 +10,6 @@ Technologies
 * JWT
 * PostgreSQL
 * Flyway
+
+Требования
+* База данных userservice, username=postgres, password=psql
