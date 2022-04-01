@@ -1,4 +1,4 @@
-package ru.mitrasoft.userservice;
+package ru.mitrasoft.userservice.service;
 
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
