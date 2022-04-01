@@ -75,6 +75,7 @@ public class AppUserIT {
         resultActions.andExpect(status().isCreated());
 
         assertThat(appUserRepository.selectExistsEmail(appUser.getEmail())).isTrue();
+        appUserRepository.delete(appUserRepository.findByEmail(appUser.getEmail()).get());
     }
 
     @Test
