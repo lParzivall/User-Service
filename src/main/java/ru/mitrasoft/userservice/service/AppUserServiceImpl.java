@@ -72,9 +72,15 @@ public class AppUserServiceImpl implements AppUserService, UserDetailsService {
     }
 
     @Override
-    public List<AppUser> getAppUsers() {
+    public List<AppUser> getAllAppUsers() {
         log.info("Fetching all users");
         return appUserRepository.findAll();
+    }
+
+    @Override
+    public List<AppUserRole> getAllAppUserRoles() {
+        log.info("Fetching all roles");
+        return appUserRoleRepository.findAll();
     }
 
     @Override
@@ -109,6 +115,7 @@ public class AppUserServiceImpl implements AppUserService, UserDetailsService {
             }
             appUser.setEmail(email);
         }
+        log.info("User {} updated in the database", appUser);
     }
 
     @Override

@@ -47,7 +47,7 @@ class AppUserServiceTest {
     @Test
     void canGetAllAppUsers() {
         // when
-        underTest.getAppUsers();
+        underTest.getAllAppUsers();
         // then
         verify(appUserRepository).findAll();
     }

@@ -14,7 +14,9 @@ public interface AppUserService {
 
     AppUser getAppUser(String email);
 
-    List<AppUser> getAppUsers();
+    List<AppUser> getAllAppUsers();
+
+    List<AppUserRole> getAllAppUserRoles();
 
     void deleteAppUser(Long appUserId);
 

@@ -25,7 +25,7 @@ public class AppUserController {
 
     @GetMapping("/users")
     public ResponseEntity<List<AppUser>> getAppUsers() {
-        return ResponseEntity.ok().body(appUserService.getAppUsers());
+        return ResponseEntity.ok().body(appUserService.getAllAppUsers());
     }
 
     @PostMapping("/users")
@@ -46,6 +46,11 @@ public class AppUserController {
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String email) {
         appUserService.updateAppUser(appUserId, name, email);
+    }
+
+    @GetMapping("/roles")
+    public ResponseEntity<List<AppUserRole>> getAppUserRoles() {
+        return ResponseEntity.ok().body(appUserService.getAllAppUserRoles());
     }
 
     @PostMapping("/roles")
