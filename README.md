@@ -23,6 +23,7 @@ Technologies
 ![](src/main/resources/images/rights.png)
 
 Пример работы приложения.
+
 Аунтефикация
 ![](src/main/resources/images/login.png)
 
