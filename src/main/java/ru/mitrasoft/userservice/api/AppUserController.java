@@ -59,6 +59,13 @@ public class AppUserController {
         return ResponseEntity.created(uri).body(appUserService.saveAppUserRole(role));
     }
 
+    @PutMapping( "/roles/{userRoleId}")
+    public void updateAppUserRole(
+            @PathVariable("userRoleId") Long appUserRoleId,
+            @RequestParam(required = true) String name) {
+        appUserService.updateAppUserRole(appUserRoleId, name);
+    }
+
     @PostMapping("/roles/addtouser")
     public ResponseEntity<?>addRoleToUser(@RequestBody RoleToUserForm form) {
         appUserService.addRoleToAppUser(form.getUsername(), form.getRoleName());

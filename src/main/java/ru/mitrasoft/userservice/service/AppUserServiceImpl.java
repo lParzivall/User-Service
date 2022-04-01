@@ -119,6 +119,20 @@ public class AppUserServiceImpl implements AppUserService, UserDetailsService {
     }
 
     @Override
+    public void updateAppUserRole(Long appUserRoleId, String name) {
+        AppUserRole appUserRole = appUserRoleRepository.findById(appUserRoleId)
+                .orElseThrow(() -> new IllegalStateException(
+                        "user role with id " + appUserRoleId + " does not exists"
+                ));
+        if (name != null &&
+                name.length() > 0 &&
+                !Objects.equals(appUserRole.getName(), name)) {
+            appUserRole.setName(name);
+        }
+        log.info("User role {} updated in the database", appUserRole);
+    }
+
+    @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<AppUser> appUser = appUserRepository.findByEmail(email);
         if (appUser.isEmpty()) {

@@ -22,5 +22,7 @@ public interface AppUserService {
 
     void updateAppUser(Long appUserId, String name, String email);
 
+    void updateAppUserRole(Long appUserRoleId, String name);
+
 
 }
