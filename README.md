@@ -30,4 +30,7 @@ Technologies
 Авторизация(используется полученный access token)
 ![](src/main/resources/images/auth.png)
 
+Запрос сервиса GrpcClient от пользователя с правами ROLE_ADMIN
+![](src/main/resources/images/grpc_request.png)
+
 
