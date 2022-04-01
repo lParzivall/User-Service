@@ -43,7 +43,7 @@ class AppUserRoleRepositoryTest {
     }
 
     @Test
-    void itShouldCheckWhenAppUserEmailDoesNotExists() {
+    void itShouldCheckWhenAppUserRoleNameDoesNotExists() {
         // given
         String name = "ROLE_TEST";
 
