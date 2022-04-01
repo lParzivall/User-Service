@@ -27,7 +27,7 @@ Technologies
 Аунтефикация
 ![](src/main/resources/images/login.png)
 
-Авторизация
+Авторизация(используется полученный access token)
 ![](src/main/resources/images/auth.png)
 
 
