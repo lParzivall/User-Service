@@ -23,4 +23,8 @@ public class AppUserRole {
     )
     private Long id;
     private String name;
+
+    public AppUserRole(String name) {
+        this.name = name;
+    }
 }
