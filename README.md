@@ -4,7 +4,7 @@ RESTful service
 * authentication and authorization with JWT acsess and refresh tokens.
 * get information about users and their roles. 
 
-Technologies
+Технологии
 * Spring Boot
 * Spring Security
 * JWT
